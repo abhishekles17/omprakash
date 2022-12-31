@@ -8,11 +8,13 @@ import RightArrow from "./assets/images/rightArrow.svg";
 import Edit from "./assets/images/edit.svg";
 import RoundTable from "./assets/images/roundTable.png"
 import BottomDesign from "./assets/images/bottomDesign.png"
+import LeftNav from "./LeftNav";
 
 const Landing = () => {
   return (
     <div className="landingContainer">
       <div className="bodyContainer">
+        <LeftNav/>
         <div className="header">
           <div className="leftItem">
             <img src={Beyond} className="beyond" alt="logo" />
