@@ -1,0 +1,485 @@
+.container {
+  display: flex;
+  align-items: center;
+  height: 100vh;
+  position: relative;
+  background: #fdfbee;
+}
+input {
+  border: none;
+  background-color: transparent;
+}
+
+input:focus,
+input:active {
+  box-shadow: none !important;
+  -moz-box-shadow: none !important;
+  -webkit-box-shadow: none !important;
+  outline: none !important;
+}
+
+select {
+  border: none;
+  background-color: transparent;
+}
+
+select:focus,
+select:active {
+  box-shadow: none !important;
+  -moz-box-shadow: none !important;
+  -webkit-box-shadow: none !important;
+  outline: none !important;
+}
+
+.headerContainer {
+  z-index: 2;
+  box-sizing: border-box;
+  width: 100%;
+  height: 104px;
+  position: fixed;
+  top: 0;
+  padding: 13px 13px 14px 15px;
+  background-image: linear-gradient(to left, #089a85, #480477);
+  .topBar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .leftBar {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+
+      .logoDetails {
+        display: flex;
+        align-items: center;
+        margin-right: 60px;
+
+        .eval {
+          width: 32px;
+          height: 32px;
+        }
+
+        .firstName {
+          font-size: 16px;
+          color: white;
+          font-weight: bold;
+        }
+
+        .lastName {
+          font-size: 19px;
+          color: #ff8c00;
+          font-weight: bold;
+        }
+      }
+
+      .searchTab {
+        position: relative;
+        width: 300px;
+        padding: 8px 8px 7px 9px;
+        border-radius: 4px;
+        background-color: #fff;
+        display: flex;
+        align-items: center;
+
+        .search {
+          width: 16px;
+          height: 16px;
+        }
+
+        .input {
+          margin-left: 8px;
+        }
+
+        .cross {
+          position: absolute;
+          right: 10px;
+          width: 16px;
+          height: 16px;
+        }
+      }
+    }
+
+    .rightBar {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+
+      .managerButton {
+        padding: 9px 14px 8px 15px;
+        border-radius: 4px;
+        background-color: #ff8c00;
+        font-family: "Lato", sans-serif;
+        font-size: 12px;
+        font-weight: bold;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: normal;
+        letter-spacing: normal;
+        color: #fff;
+        margin-right: 15px;
+      }
+
+      .select {
+        width: 246px;
+        padding: 9px 13px 8px 10px;
+        border-radius: 4px;
+        background-color: #4c0077;
+        font-family: "Lato", sans-serif;
+        font-size: 12px;
+        font-weight: normal;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: normal;
+        letter-spacing: normal;
+        color: #fff;
+        border-right: 8px solid transparent;
+        margin-right: 24px;
+      }
+
+      .profileDiv {
+        display: flex;
+        align-items: center;
+
+        .profile {
+          width: 24px;
+          height: 24px;
+          margin-right: 6px;
+        }
+        .profileName {
+          font-family: "Lato", sans-serif;
+          font-size: 15px;
+          font-weight: normal;
+          font-stretch: normal;
+          font-style: normal;
+          line-height: normal;
+          letter-spacing: normal;
+          color: #fff;
+          margin-right: 6px;
+        }
+
+        .arrowDown {
+          transform: rotate(-270deg);
+          color: white;
+          font-weight: bolder;
+          font-size: 7px;
+        }
+      }
+    }
+  }
+
+  .downBar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+
+    .text2020 {
+      margin-left: 60px;
+      font-family: "Lato", sans-serif;
+      font-size: 16px;
+      font-weight: bold;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: normal;
+      letter-spacing: normal;
+      color: #fff;
+    }
+    .icons {
+      display: flex;
+      align-items: center;
+
+      .bellContainer {
+        position: relative;
+        margin-right: 20px;
+        .bell {
+          cursor: pointer;
+          width: 20px;
+          height: 24px;
+        }
+
+        .count {
+          position: absolute;
+          padding: 1px 3px;
+          border: solid 1px #0d8f84;
+          border-radius: 50px;
+          background-color: #ff8c00;
+          font-size: 6px;
+          font-weight: bold;
+          font-stretch: normal;
+          font-style: normal;
+          line-height: normal;
+          letter-spacing: normal;
+          color: #fff;
+          top: 0;
+          right: 0;
+        }
+      }
+
+      .videoContainer {
+        margin-right: 20px;
+
+        .video {
+          cursor: pointer;
+          width: 29px;
+          height: 21px;
+        }
+      }
+
+      .chat {
+        cursor: pointer;
+        width: 25px;
+        height: 25px;
+      }
+    }
+  }
+}
+
+.navContainer {
+  position: fixed;
+  width: 70px;
+  left: 0;
+  height: 100%;
+  background: #480477;
+  z-index: 1;
+  margin-top: 205px;
+
+  .navText {
+    font-family: "Lato", sans-serif;
+    margin-top: 3px;
+    font-size: 8px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: center;
+    color: #fff;
+  }
+  .paddingNav {
+    padding: 0 24px;
+  }
+
+  .homeContainer {
+    margin-top: 19px;
+  }
+}
+
+.landingContainer {
+  height: 100%;
+  width: 100%;
+
+  .bodyContainer {
+    padding: 104px 0 0 70px;
+    background: #fdfbee;
+    position: relative;
+
+    .header {
+      padding: 24px 18px 16px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 0.5px solid #4f4f4f;
+
+      .leftItem {
+        display: flex;
+        align-items: center;
+
+        .beyond {
+          width: 157px;
+          height: 28px;
+          object-fit: contain;
+          margin-right: 44px;
+        }
+      }
+
+      .rightItem {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        margin-right: 190px;
+      }
+
+      .select {
+        width: 138px;
+        padding: 8px 13px 8px 10px;
+        border-radius: 4px;
+        background-color: #fff;
+        border-right: 8px solid transparent;
+        font-family: "Lato", sans-serif;
+        font-size: 18px;
+        font-weight: bold;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: normal;
+        letter-spacing: normal;
+        color: #333;
+      }
+    }
+
+    .slider {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      .article {
+        position: relative;
+        background: white;
+        max-width: 900px;
+        margin-top: 30px;
+        margin-bottom: 150px;
+        z-index: 1;
+
+
+        .eyeContainer {
+          top: 0;
+          right: -55px;
+          position: absolute;
+          padding: 13px 12px 13.2px;
+          border-bottom-right-radius: 12px;
+          border-top-right-radius: 12px;
+          background-color: #ff8c00;
+
+          .eye {
+            width: 30px;
+            height: 21.8px;
+          }
+          .count {
+            position: absolute;
+            top: -10px;
+            right: -10px;
+            padding: 2px 6px;
+            border: solid 2px #ff8c00;
+            background-color: #fff;
+            border-radius: 50px;
+          }
+        }
+
+        .editContainer {
+          position: absolute;
+          top: 70px;
+          right: -55px;
+          padding: 14px 18px 13.1px 15px;
+          border-bottom-right-radius: 12px;
+          border-top-right-radius: 12px;
+          background-color: #50218b;
+          .edit {
+            width: 21px;
+            height: 20.9px;
+          }
+        }
+
+        .leftArrowContainer {
+          position: absolute;
+          left: -25px;
+          top: 50%;
+          margin: auto;
+          border-radius: 50%;
+          background: white;
+          padding: 20px;
+          z-index: -1;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+
+        .rightArrowContainer {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          position: absolute;
+          right: -25px;
+          top: 50%;
+          margin: auto;
+          border-radius: 50px;
+          background: white;
+          padding: 20px;
+          z-index: -1;
+        }
+
+        .textHeader {
+          font-family: "Lato", sans-serif;
+          font-size: 26px;
+          font-weight: bold;
+          font-stretch: normal;
+          font-style: normal;
+          line-height: normal;
+          letter-spacing: normal;
+          color: #333;
+        }
+
+        .text {
+          font-family: "Lato", sans-serif;
+          font-size: 16px;
+          font-weight: bold;
+          font-stretch: normal;
+          font-style: normal;
+          line-height: normal;
+          letter-spacing: normal;
+          color: #333;
+        }
+
+        .header {
+          padding: 24px;
+          border-bottom: 0.5px solid #4f4f4f;
+        }
+
+        .body {
+          padding: 24px;
+        }
+
+        .articleImg {
+          margin-top: 18px;
+          max-width: 824px;
+          margin-bottom: 38px;
+        }
+      }
+    }
+
+    .roundTable {
+        position: absolute;
+        width: 113px;
+        height: 113px;
+        right: 0;
+        top: 103px;
+    }
+
+    .bottomDesign {
+        max-width: 635px;
+        height: 105px;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        object-fit: contain;
+    }
+
+    .beyondBig {
+        right: 0;
+        margin: auto;
+        left: 30%;
+        position: fixed; 
+        max-width: 240px;
+        height: 60px;
+        bottom: 30px;
+    }
+  }
+}
+
+.marginTop29 {
+  margin-top: 29px;
+}
+
+.marginLeft10 {
+  margin-left: 10px;
+}
+
+.cursorPointer {
+  cursor: pointer;
+}
+
+.flexCenterCol {
+  flex-direction: column;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
