@@ -45,10 +45,6 @@ const RoundTable = () => {
           })}
         </div>
       </div>
-
-      {/* <div className="roundTableIcon">
-      <img src={RoundFull} className="icon" alt="logo" />
-      </div> */}
     </div>
   );
 };
