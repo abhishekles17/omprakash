@@ -6,15 +6,15 @@ import Eye from "./assets/images/eye.svg";
 import LeftArrow from "./assets/images/leftArrow.svg";
 import RightArrow from "./assets/images/rightArrow.svg";
 import Edit from "./assets/images/edit.svg";
-import RoundTable from "./assets/images/roundTable.png"
-import BottomDesign from "./assets/images/bottomDesign.png"
+import RoundTable from "./assets/images/roundTable.png";
+import BottomDesign from "./assets/images/bottomDesign.png";
 import LeftNav from "./LeftNav";
 
-const Landing = () => {
+const Landing = ({ setOpen }) => {
   return (
     <div className="landingContainer">
       <div className="bodyContainer">
-        <LeftNav/>
+        <LeftNav />
         <div className="header">
           <div className="leftItem">
             <img src={Beyond} className="beyond" alt="logo" />
@@ -98,7 +98,16 @@ const Landing = () => {
             </div>
           </div>
         </div>
-        <img src={RoundTable} className="roundTable" alt="logo" />
+        <img
+          src={RoundTable}
+          onClick={() => {
+            setOpen((prevState) => {
+              return !prevState
+            });
+          }}
+          className="roundTable"
+          alt="logo"
+        />
         <img src={BottomDesign} className="bottomDesign" alt="logo" />
         <img src={BeyondBig} className="beyondBig" alt="logo" />
       </div>

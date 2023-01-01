@@ -1,0 +1,46 @@
+.tabContainer {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 15px 16px 11px;
+    border-bottom: 0.5px solid #4f4f4f;
+
+    .tab {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        cursor: pointer;
+    }
+
+    .text {
+        opacity: 0.5;
+        font-family: "Lato", sans-serif;
+        font-size: 16px;
+        font-weight: bold;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: normal;
+        letter-spacing: normal;
+        color: #333;
+    }
+
+    .selectedTab {
+        opacity: 1;
+        color: #ff8c00;
+    }
+
+    .hideLine {
+        visibility: hidden;
+        margin-top: 4px;
+        width: 34px;
+        height: 2px;
+    }
+
+    .activeLine {
+        margin-top: 4px;
+        width: 34px;
+        height: 2px;
+        background-color: #ff8c00;
+    }
+}
