@@ -1,3 +1,8 @@
+@use "../utilities/_colors" as *;
+@use "../utilities/_fonts" as *;
+@use "../utilities/_mixins" as *;
+
+
 .container-wrap {
   position: fixed;
   top: 0;
@@ -7,7 +12,7 @@
   transform: translateX(100%);
   transition: 0.3s ease-out;
   z-index: 3;
-  background: #fdfbee;
+  background: $lightYellow;
 }
 
 .sidePanel-parent-container {
@@ -28,21 +33,13 @@
   overflow: auto;
 
   .header {
-    border-bottom: 0.5px solid #4f4f4f;
+    border-bottom: 0.5px solid $brown;
     padding: 19px 16px 15px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+    @include flexBox(flex,center,space-between);
 
     .text {
-      font-family: "Lato", sans-serif;
-      font-size: 18px;
-      font-weight: bold;
-      font-stretch: normal;
-      font-style: normal;
-      line-height: normal;
-      letter-spacing: normal;
-      color: #333;
+      @include fontStyling($lato,$font_size_18,$font_weight_bold,$stretch_normal,$normal_font_style,normal,normal);
+      color: $darkBrown;
     }
 
     .close {

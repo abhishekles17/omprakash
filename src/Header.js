@@ -1,5 +1,5 @@
 import "./main.scss";
-import Eval from "./assets/images/eval.svg";
+import NewLogo from "./assets/images/newLogo.png"
 import Search from "./assets/images/search.svg";
 import CrossBtn from "./assets/images/cross.svg";
 import Profile from "./assets/images/profile.svg";
@@ -12,11 +12,7 @@ const Header = () => {
       <div className="topBar">
         <div className="leftBar">
           <div className="logoDetails">
-            <img src={Eval} className="eval" alt="logo" />
-            <div className="marginLeft10">
-              <span className="firstName">omprakash</span>
-              <span className="lastName">EdGE</span>
-            </div>
+            <img src={NewLogo} className="newLogo" alt="logo" />
           </div>
           <div className="searchTab">
             <img src={Search} className="search" alt="logo" />

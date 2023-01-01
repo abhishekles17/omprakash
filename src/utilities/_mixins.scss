@@ -1,0 +1,20 @@
+@mixin flexBox($display, $alignItems, $justifyContent) {
+   display: $display;
+   align-items: $alignItems;
+   justify-content: $justifyContent;
+  }
+
+  @mixin flexCenter($display, $alignItems) {
+    display: $display;
+    align-items: $alignItems;
+  }
+
+  @mixin fontStyling($fontFamily, $fontSize, $fontWeight, $fontStretch, $fontStyle, $lineHeight, $letterSpacing) {
+    font-family: $fontFamily;
+    font-size: $fontSize;
+    font-weight: $fontWeight;
+    font-stretch: $fontStretch;
+    font-style: $fontStyle;
+    line-height: $lineHeight;
+    letter-spacing: $letterSpacing;
+  }
