@@ -1,16 +1,33 @@
 import Tabs from "./common/Tabs";
 import "./main.scss";
 import { TabsData, feedData } from "./miscUtils/miscData";
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import Filter from "./assets/images/filter.svg";
 import SearchNew from "./assets/images/searchNew.svg";
 import FilterToolTip from "./FilterToolTip";
 import FeedCard from "./FeedCard";
-import RoundFull from "./assets/images/roundFull.png"
 
 const RoundTable = () => {
+  const wrapperRef = useRef(null);
   const [active, setActive] = useState(1);
   const [filter, setFilter] = useState(false);
+
+  useEffect(() => {
+    document.addEventListener("click", handleClickOutside, false);
+    return () => {
+      document.removeEventListener("click", handleClickOutside, false);
+    };
+  }, []);
+
+
+  const handleClickOutside = event => {
+   
+    if (wrapperRef.current && !wrapperRef.current.contains(event.target)) {
+      setFilter(false);
+    }
+  };
+
+
 
   return (
     <div className="tableContainer">
@@ -26,6 +43,7 @@ const RoundTable = () => {
             />
           </div>
 
+          <div ref={wrapperRef}>
           <img
             src={Filter}
             onClick={() => {
@@ -37,7 +55,8 @@ const RoundTable = () => {
             alt="logo"
           />
 
-          {filter && <FilterToolTip />}
+          {filter && <FilterToolTip/>}
+          </div>
         </div>
         <div className="listContainer">
           {feedData.map((item, index) => {

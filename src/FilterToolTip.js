@@ -8,15 +8,15 @@ const FilterToolTip = () => {
 
       <div className="content">
         <div className="radio">
-          <label class="radioContainer">
+          <label className="radioContainer">
             Show Responses
             <input type="radio" name="radio" />
-            <span class="checkmark"></span>
+            <span className="checkmark"></span>
           </label>
-          <label class="radioContainer">
+          <label className="radioContainer">
             Show Comments
             <input type="radio" name="radio" />
-            <span class="checkmark"></span>
+            <span className="checkmark"></span>
           </label>
         </div>
         <div className="buttons">

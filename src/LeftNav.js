@@ -8,23 +8,23 @@ import Class from "./assets/images/class.svg";
 const LeftNav = () => {
   return (
     <div className="navContainer">
-      <div className="homeContainer flexCenterCol cursorPointer">
+      <div className="homeContainer flex-c-col cursor-p">
         <img src={Home} className="paddingNav eval" alt="logo" />
         <div className="navText">Home</div>
       </div>
-      <div className="logisticsContainer marginTop29 flexCenterCol cursorPointer">
+      <div className="logisticsContainer m-top-29 flex-c-col cursor-p">
         <img src={Compass} className="paddingNav eval" alt="logo" />
         <div className="navText">Logistics</div>
       </div>
-      <div className="classContainer marginTop29 flexCenterCol cursorPointer">
+      <div className="classContainer m-top-29  flex-c-col cursor-p">
         <img src={Class} className="paddingNav eval" alt="logo" />
         <div className="navText">Classroom</div>
       </div>
-      <div className="shareContainer marginTop29 flexCenterCol cursorPointer">
+      <div className="shareContainer m-top-29  flex-c-col cursor-p">
         <img src={Stories} className="paddingNav eval" alt="logo" />
         <div className="navText">Share Stories</div>
       </div>
-      <div className="evalsContainer marginTop29 flexCenterCol cursorPointer">
+      <div className="evalsContainer m-top-29  flex-c-col cursor-p">
         <img src={Eval} className="paddingNav eval" alt="logo" />
         <div className="navText">Evals</div>
       </div>

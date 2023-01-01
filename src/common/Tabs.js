@@ -5,7 +5,7 @@ const Tabs = ({ list, active, setActive }) => {
       {list.map((tab, index) => {
         return (
           <div
-            className={index > 0 ? "tab marginLeft37" : "tab" }
+            className={index > 0 ? "tab m-left-37" : "tab" }
             key={index}
 
             onClick={() => {

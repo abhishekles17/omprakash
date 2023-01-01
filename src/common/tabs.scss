@@ -1,33 +1,27 @@
+@use "../utilities/_colors" as *;
+@use "../utilities/_fonts" as *;
+@use "../utilities/_mixins" as *;
+
 .tabContainer {
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
+    @include flexBox(flex,center,flex-start);
     padding: 15px 16px 11px;
-    border-bottom: 0.5px solid #4f4f4f;
+    border-bottom: 0.5px solid $brown;
 
     .tab {
-        display: flex;
-        align-items: center;
-        justify-content: center;
+        @include flexBox(flex,center,center);
         flex-direction: column;
         cursor: pointer;
     }
 
     .text {
         opacity: 0.5;
-        font-family: "Lato", sans-serif;
-        font-size: 16px;
-        font-weight: bold;
-        font-stretch: normal;
-        font-style: normal;
-        line-height: normal;
-        letter-spacing: normal;
-        color: #333;
+        @include fontStyling($lato,$font_size_16,$font_weight_bold,$stretch_normal,$normal_font_style,normal,normal);
+        color: $darkBrown;
     }
 
     .selectedTab {
         opacity: 1;
-        color: #ff8c00;
+        color: $lightOrange;
     }
 
     .hideLine {
@@ -41,6 +35,6 @@
         margin-top: 4px;
         width: 34px;
         height: 2px;
-        background-color: #ff8c00;
+        background-color: $lightOrange;
     }
 }
