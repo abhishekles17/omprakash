@@ -4,6 +4,12 @@
 @use "utilities/_mixins" as *;
 
 
+body {
+  font-family: $lato;
+  font-style: normal;
+  font-stretch: normal;
+  letter-spacing:normal;
+}
 
 .container {
   display: flex;
@@ -66,7 +72,7 @@ select:active {
         width: 300px;
         padding: 8px 8px 7px 9px;
         border-radius: 4px;
-        background-color: white;
+        background-color: $primary;
         @include flexCenter(flex,center);
 
         .search {
@@ -94,8 +100,8 @@ select:active {
         padding: 9px 14px 8px 15px;
         border-radius: 4px;
         background-color:  $lightOrange;
-        @include fontStyling($lato,$font_size_12,$font_weight_bold,$stretch_normal,$normal_font_style,normal,normal);
-        color: white;
+        @include fontStyling($font_size_12,$font_weight_bold,normal);
+        color: $primary;
         margin-right: 15px;
       }
 
@@ -104,8 +110,8 @@ select:active {
         padding: 9px 13px 8px 10px;
         border-radius: 4px;
         background-color: $lightPurple;
-        @include fontStyling($lato,$font_size_12,$font_weight_normal,$stretch_normal,$normal_font_style,normal,normal);
-        color: white;
+        @include fontStyling($font_size_12,$font_weight_normal,normal);
+        color: $primary;
         border-right: 8px solid transparent;
         margin-right: 24px;
       }
@@ -119,14 +125,14 @@ select:active {
           margin-right: 6px;
         }
         .profileName {
-          @include fontStyling($lato,$font_size_15,$font_weight_normal,$stretch_normal,$normal_font_style,normal,normal);
-          color: white;
+          @include fontStyling($font_size_15,$font_weight_normal,normal);
+          color: $primary;
           margin-right: 6px;
         }
 
         .arrowDown {
           transform: rotate(-270deg);
-          color: white;
+          color: $primary;
           font-weight: $font_weight_bolder;
           font-size: $font_size_7;
         }
@@ -140,8 +146,8 @@ select:active {
 
     .text2020 {
       margin-left: 60px;
-      @include fontStyling($lato,$font_size_16,$font_weight_bold,$stretch_normal,$normal_font_style,normal,normal);
-      color: white;
+      @include fontStyling($font_size_16,$font_weight_bold,normal);
+      color: $primary;
     }
     .icons {
       @include flexCenter(flex,center);
@@ -161,8 +167,8 @@ select:active {
           border: solid 1px $lightDarkgreen;
           border-radius: 50px;
           background-color:  $lightOrange;
-          @include fontStyling($lato,$font_size_6,$font_weight_bold,$stretch_normal,$normal_font_style,normal,normal);
-          color: white;
+          @include fontStyling($font_size_6,$font_weight_bold,normal);
+          color: $primary;
           top: 0;
           right: 0;
         }
@@ -196,10 +202,10 @@ select:active {
   z-index: 1;
 
   .navText {
-    @include fontStyling($lato,$font_size_8,$font_weight_normal,$stretch_normal,$normal_font_style,normal,normal);
+    @include fontStyling($font_size_8,$font_weight_normal,normal);
     margin-top: 3px;
     text-align: center;
-    color: white;
+    color: $primary;
   }
   .paddingNav {
     padding: 0 24px;
@@ -240,9 +246,9 @@ select:active {
         width: 138px;
         padding: 8px 13px 8px 10px;
         border-radius: 4px;
-        background-color: white;
+        background-color: $primary;
         border-right: 8px solid transparent;
-        @include fontStyling($lato,$font_size_18,$font_weight_bold,$stretch_normal,$normal_font_style,normal,normal);
+        @include fontStyling($font_size_18,$font_weight_bold,normal);
         color: $darkBrown;
       }
     }
@@ -252,7 +258,7 @@ select:active {
 
       .article {
         position: relative;
-        background: white;
+        background: $primary;
         max-width: 900px;
         margin-top: 30px;
         margin-bottom: 150px;
@@ -277,7 +283,7 @@ select:active {
             right: -10px;
             padding: 2px 6px;
             border: solid 2px  $lightOrange;
-            background-color: white;
+            background-color: $primary;
             border-radius: 50px;
           }
         }
@@ -302,7 +308,7 @@ select:active {
           top: 50%;
           margin: auto;
           border-radius: 50%;
-          background: white;
+          background: $primary;
           padding: 20px;
           z-index: -1;
           @include flexBox(flex,center,center);
@@ -315,18 +321,18 @@ select:active {
           top: 50%;
           margin: auto;
           border-radius: 50px;
-          background: white;
+          background: $primary;
           padding: 20px;
           z-index: -1;
         }
 
         .textHeader {
-          @include fontStyling($lato,$font_size_26,$font_weight_bold,$stretch_normal,$normal_font_style,normal,normal);
+          @include fontStyling($font_size_26,$font_weight_bold,normal);
           color: $darkBrown;
         }
 
         .text {
-          @include fontStyling($lato,$font_size_16,$font_weight_bold,$stretch_normal,$normal_font_style,normal,normal);
+          @include fontStyling($font_size_16,$font_weight_bold,normal);
           color: $darkBrown;
         }
 
@@ -404,9 +410,9 @@ select:active {
         position: absolute;
         width: 161px;
         border-radius: 4px;
-        box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+        box-shadow: 0 2px 4px 0 $boxShadowColor;
         border: solid 1px $lightGrey;
-        background-color: white;
+        background-color: $primary;
         top: 45px;
         right: 0;
 
@@ -415,7 +421,7 @@ select:active {
           border-bottom: 0.5px solid $brown;
 
           .text {
-            @include fontStyling($lato,$font_size_12,$font_weight_bold,$stretch_normal,$normal_font_style,normal,normal);
+            @include fontStyling($font_size_12,$font_weight_bold,normal);
             color: $darkBrown;
           }
         }
@@ -431,7 +437,7 @@ select:active {
               border-radius: 4px;
               border: solid 1px $darkGrey;
               padding: 5px 18px;
-              @include fontStyling($lato,$font_size_10,$font_weight_600,$stretch_normal,$normal_font_style,normal,normal);
+              @include fontStyling($font_size_10,$font_weight_600,normal);
               color: $darkBrown;
             }
 
@@ -441,15 +447,15 @@ select:active {
               border-radius: 4px;
               background-color: $orange;
               padding: 6px 7px;
-              @include fontStyling($lato,$font_size_10,$font_weight_600,$stretch_normal,$normal_font_style,normal,normal);
-              color: white;
+              @include fontStyling($font_size_10,$font_weight_600,normal);
+              color: $primary;
               text-align: center;
             }
           }
 
           .radio {
             .radioContainer {
-              @include fontStyling($lato,$font_size_12,$font_weight_500,$stretch_normal,$normal_font_style,normal,normal);
+              @include fontStyling($font_size_12,$font_weight_500,normal);
               color: $darkBrown;
               display: block;
               position: relative;
@@ -470,7 +476,7 @@ select:active {
               left: 0;
               width: 15px;
               height: 15px;
-              background-color: white;
+              background-color: $primary;
               border: 0.5px solid;
             }
 
@@ -513,7 +519,7 @@ select:active {
         }
 
         .input {
-          @include fontStyling($lato,$font_size_14,$font_weight_normal,$stretch_normal,$normal_font_style,normal,normal);
+          @include fontStyling($font_size_14,$font_weight_normal,normal);
           margin-left: 12px;
           color: $grey;
         }
@@ -533,7 +539,7 @@ select:active {
   border-radius: 4px;
   margin-top: 20px;
   border: solid 1px $lightGrey;
-  background-color: white;
+  background-color: $primary;
   .header {
     @include flexBox(flex,center,space-between);
     border-radius: 4px;
@@ -551,13 +557,13 @@ select:active {
       .name {
         margin-left: 6px;
         .text {
-          @include fontStyling($lato,$font_size_14,$font_weight_bold,$stretch_normal,$normal_font_style,normal,normal);
+          @include fontStyling($font_size_14,$font_weight_bold,normal);
           color: $darkBrown;
         }
 
         .title {
           margin-top: 2px;
-          @include fontStyling($lato,$font_size_10,$font_weight_normal,$stretch_normal,$normal_font_style,normal,normal);
+          @include fontStyling($font_size_10,$font_weight_normal,normal);
           color: $darkGrey;
         }
       }
@@ -573,15 +579,15 @@ select:active {
         border: solid 1px $lightPurple;
         background-color: $lightPurple;
         padding: 5px 16px 4px 17px;
-        @include fontStyling($lato,$font_size_12,$font_weight_normal,$stretch_normal,$normal_font_style,normal,normal);
-        color: white;
+        @include fontStyling($font_size_12,$font_weight_normal,normal);
+        color: $primary;
       }
 
       .arrowContainer {
         @include flexBox(flex,center,center);
         margin-left: 10px;
         border: solid 1px $lightSky;
-        background-color: rgba(201, 220, 255, 0.3);
+        background-color: $arrowBgr;
         padding: 6px 7px 6px 8px;
 
         .arrowRight {
@@ -593,7 +599,7 @@ select:active {
   }
 
   .content {
-    background-color: white;
+    background-color: $primary;
     padding: 14px 12px 13px;
 
     .feedDesc {
@@ -606,7 +612,7 @@ select:active {
       }
 
       .text {
-        @include fontStyling($lato,$font_size_12,$font_weight_normal,$stretch_normal,$normal_font_style,1.75,normal);
+        @include fontStyling($font_size_12,$font_weight_normal,1.75);
         color: $darkGrey;
       }
     }
@@ -624,7 +630,7 @@ select:active {
 
         .text {
           margin-left: 5px;
-          @include fontStyling($lato,$font_size_12,$font_weight_bold,$stretch_normal,$normal_font_style,1.75,normal);
+          @include fontStyling($font_size_12,$font_weight_bold,1.75);
           color: $darkGrey;
         }
       }
@@ -634,7 +640,7 @@ select:active {
         @include flexBox(flex,center,center);
         text-align: center;
         margin-left: 7px;
-        @include fontStyling($lato,$font_size_12,$font_weight_bold,$stretch_normal,$normal_font_style,1.75,normal);
+        @include fontStyling($font_size_12,$font_weight_bold,1.75);
         color: $darkGrey;
       }
     }

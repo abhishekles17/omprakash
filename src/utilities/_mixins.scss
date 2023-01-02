@@ -9,12 +9,8 @@
     align-items: $alignItems;
   }
 
-  @mixin fontStyling($fontFamily, $fontSize, $fontWeight, $fontStretch, $fontStyle, $lineHeight, $letterSpacing) {
-    font-family: $fontFamily;
+  @mixin fontStyling($fontSize, $fontWeight, $lineHeight) {
     font-size: $fontSize;
     font-weight: $fontWeight;
-    font-stretch: $fontStretch;
-    font-style: $fontStyle;
     line-height: $lineHeight;
-    letter-spacing: $letterSpacing;
   }

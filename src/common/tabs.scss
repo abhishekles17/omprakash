@@ -15,7 +15,7 @@
 
     .text {
         opacity: 0.5;
-        @include fontStyling($lato,$font_size_16,$font_weight_bold,$stretch_normal,$normal_font_style,normal,normal);
+        @include fontStyling($font_size_16,$font_weight_bold,normal);
         color: $darkBrown;
     }
 
