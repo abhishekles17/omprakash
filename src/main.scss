@@ -885,6 +885,9 @@ select:active {
       .text {
         @include fontStyling($font_size_12, $font_weight_normal, 1.75);
         color: $darkGrey;
+        @media screen and (max-width: $mobileMax) {
+          @include fontStyling($font_size_12, $font_weight_normal, 1.33);
+        }
       }
     }
 

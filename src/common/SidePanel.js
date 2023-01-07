@@ -1,7 +1,7 @@
 import "./sidepanel.scss";
 import Close from "../assets/images/close.svg"
 const SidePanel = (props) => {
-  const { open, title = "", onClose, headerIcon, navigateFrom = "left", size="100%" } = props;
+  const { open, title = "", onClose, headerIcon, navigateFrom = "bottom", size="100%" } = props;
   return (
     <div className={open ? "sidePanel-parent-container" : ""}>
       <div
