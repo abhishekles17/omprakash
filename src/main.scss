@@ -1,46 +1,44 @@
-
 @use "utilities/_colors" as *;
 @use "utilities/_fonts" as *;
 @use "utilities/_mixins" as *;
-
+@use "utilities/_sizes.scss" as *;
 
 body {
   font-family: $lato;
   font-style: normal;
   font-stretch: normal;
-  letter-spacing:normal;
+  letter-spacing: normal;
 }
 
 .container {
-  display: flex;
-  align-items: center;
-  position: relative;
+  @include flexCenter(flex, center);
+  position: $relative;
   background: $lightYellow;
 }
 input {
-  border: none;
+  border: $noneDesktop;
   background-color: transparent;
 }
 
 input:focus,
 input:active {
-  box-shadow: none !important;
-  -moz-box-shadow: none !important;
-  -webkit-box-shadow: none !important;
-  outline: none !important;
+  box-shadow: $noneDesktop !important;
+  -moz-box-shadow: $noneDesktop !important;
+  -webkit-box-shadow: $noneDesktop !important;
+  outline: $noneDesktop !important;
 }
 
 select {
-  border: none;
+  border: $noneDesktop;
   background-color: transparent;
 }
 
 select:focus,
 select:active {
-  box-shadow: none !important;
-  -moz-box-shadow: none !important;
-  -webkit-box-shadow: none !important;
-  outline: none !important;
+  box-shadow: $noneDesktop !important;
+  -moz-box-shadow: $noneDesktop !important;
+  -webkit-box-shadow: $noneDesktop !important;
+  outline: $noneDesktop !important;
 }
 
 .headerContainer {
@@ -48,32 +46,44 @@ select:active {
   box-sizing: border-box;
   width: 100%;
   height: 104px;
-  position: fixed;
+  position: $fixed;
   top: 0;
   padding: 13px 13px 14px 15px;
   background-image: linear-gradient(to left, $green, $purple);
+  @media screen and (max-width: $mobileMax) {
+    height: auto;
+    background-image: linear-gradient(to right, $purple 83%, $green);
+    padding: 12px 15px;
+  }
   .topBar {
-    @include flexBox(flex,center,space-between);
+    @include flexBox(flex, center, space-between);
     .leftBar {
-      @include flexBox(flex,center,flex-start);
+      @include flexBox(flex, center, flex-start);
 
       .logoDetails {
-        @include flexCenter(flex,center);
+        @include flexCenter(flex, center);
         margin-right: 60px;
+        @media screen and (max-width: $mobileMax) {
+          margin-right: 0;
+        }
 
-       .newLogo {
-        width: 176px;
-        height: 32px;
-       }
+        .newLogo {
+          width: 176px;
+          height: 32px;
+        }
       }
 
       .searchTab {
-        position: relative;
+        position: $relative;
         width: 300px;
         padding: 8px 8px 7px 9px;
         border-radius: 4px;
         background-color: $primary;
-        @include flexCenter(flex,center);
+        @include flexCenter(flex, center);
+
+        @media screen and (max-width: $mobileMax) {
+          display: $noneMobile;
+        }
 
         .search {
           width: 16px;
@@ -85,7 +95,7 @@ select:active {
         }
 
         .cross {
-          position: absolute;
+          position: $absolute;
           right: 10px;
           width: 16px;
           height: 16px;
@@ -94,15 +104,19 @@ select:active {
     }
 
     .rightBar {
-      @include flexBox(flex,center,flex-end);
+      @include flexBox(flex, center, flex-end);
 
       .managerButton {
         padding: 9px 14px 8px 15px;
         border-radius: 4px;
-        background-color:  $lightOrange;
-        @include fontStyling($font_size_12,$font_weight_bold,normal);
+        background-color: $lightOrange;
+        @include fontStyling($font_size_12, $font_weight_bold, normal);
         color: $primary;
         margin-right: 15px;
+
+        @media screen and (max-width: $mobileMax) {
+          display: $noneMobile;
+        }
       }
 
       .select {
@@ -110,14 +124,21 @@ select:active {
         padding: 9px 13px 8px 10px;
         border-radius: 4px;
         background-color: $lightPurple;
-        @include fontStyling($font_size_12,$font_weight_normal,normal);
+        @include fontStyling($font_size_12, $font_weight_normal, normal);
         color: $primary;
         border-right: 8px solid transparent;
         margin-right: 24px;
+
+        @media screen and (max-width: $mobileMax) {
+          display: $noneMobile;
+        }
       }
 
       .profileDiv {
-        @include flexCenter(flex,center);
+        @include flexCenter(flex, center);
+        @media screen and (max-width: $mobileMax) {
+          display: $noneMobile;
+        }
 
         .profile {
           width: 24px;
@@ -125,7 +146,7 @@ select:active {
           margin-right: 6px;
         }
         .profileName {
-          @include fontStyling($font_size_15,$font_weight_normal,normal);
+          @include fontStyling($font_size_15, $font_weight_normal, normal);
           color: $primary;
           margin-right: 6px;
         }
@@ -137,37 +158,83 @@ select:active {
           font-size: $font_size_7;
         }
       }
+      .bellContainer_mv {
+        display: $noneDesktop;
+        @media screen and (max-width: $mobileMax) {
+          display: $blockMobile;
+          position: $relative;
+          margin-right: 18px;
+
+          .bell {
+            width: 21px;
+            height: 27px;
+          }
+          .count {
+            position: $absolute;
+            padding: 6px;
+            border: solid 1px $lightDarkgreen;
+            border-radius: 50px;
+            background-color: $lightOrange;
+            @include fontStyling($font_size_6, $font_weight_bold, normal);
+            top: 0;
+            right: -3px;
+          }
+        }
+      }
+      .navbarContainer {
+        display: $noneDesktop;
+        @media screen and (max-width: $mobileMax) {
+          display: $blockMobile;
+          border-radius: 4px;
+          background-color: $lightOrange;
+          padding: 4px 5px;
+          .navbar {
+            cursor: $pointer;
+            width: 18px;
+            height: 15px;
+          }
+        }
+      }
     }
   }
 
   .downBar {
-    @include flexBox(flex,center,space-between);
+    @include flexBox(flex, center, space-between);
     padding: 20px 0;
+    @media screen and (max-width: $mobileMax) {
+      padding: 0;
+    }
 
     .text2020 {
       margin-left: 60px;
-      @include fontStyling($font_size_16,$font_weight_bold,normal);
+      @include fontStyling($font_size_16, $font_weight_bold, normal);
       color: $primary;
+      @media screen and (max-width: $mobileMax) {
+        display: $noneMobile;
+      }
     }
     .icons {
-      @include flexCenter(flex,center);
+      @include flexCenter(flex, center);
+      @media screen and (max-width: $mobileMax) {
+        display: $noneMobile;
+      }
 
       .bellContainer {
-        position: relative;
+        position: $relative;
         margin-right: 20px;
         .bell {
-          cursor: pointer;
+          cursor: $pointer;
           width: 20px;
           height: 24px;
         }
 
         .count {
-          position: absolute;
+          position: $absolute;
           padding: 1px 3px;
           border: solid 1px $lightDarkgreen;
           border-radius: 50px;
-          background-color:  $lightOrange;
-          @include fontStyling($font_size_6,$font_weight_bold,normal);
+          background-color: $lightOrange;
+          @include fontStyling($font_size_6, $font_weight_bold, normal);
           color: $primary;
           top: 0;
           right: 0;
@@ -178,34 +245,62 @@ select:active {
         margin-right: 20px;
 
         .video {
-          cursor: pointer;
+          cursor: $pointer;
           width: 29px;
           height: 21px;
         }
       }
 
       .chat {
-        cursor: pointer;
+        cursor: $pointer;
         width: 25px;
         height: 25px;
+      }
+    }
+
+    .select_mv {
+      display: $noneDesktop;
+      @media screen and (max-width: $mobileMax) {
+        display: $blockMobile;
+        width: 100%;
+        padding: 9px 13px 8px 10px;
+        border-radius: 4px;
+        background-color: $primary;
+        @include fontStyling($font_size_12, $font_weight_600, normal);
+        color: $darkBrown;
+        border-right: 8px solid transparent;
+        margin-top: 20px;
       }
     }
   }
 }
 
+.navLeft {
+  @media screen and (max-width: $mobileMax) {
+    display: $noneMobile;
+  }
+}
+
 .navContainer {
-  position: fixed;
+  position: $fixed;
   width: 70px;
   left: 0;
   height: 100%;
   background: $purple;
   z-index: 1;
-
+  @media screen and (max-width: $mobileMax) {
+    background: $lightYellow;
+    width: 100%;
+  }
   .navText {
-    @include fontStyling($font_size_8,$font_weight_normal,normal);
+    @include fontStyling($font_size_8, $font_weight_normal, normal);
     margin-top: 3px;
     text-align: center;
     color: $primary;
+    @media screen and (max-width: $mobileMax) {
+      @include fontStyling($font_size_14, $font_weight_bold, normal);
+      color: $darkBrown;
+    }
   }
   .paddingNav {
     padding: 0 24px;
@@ -219,27 +314,47 @@ select:active {
   .bodyContainer {
     padding: 104px 0 0 70px;
     background: $lightYellow;
-    position: relative;
+    position: $relative;
+    @media screen and (max-width: $mobileMax) {
+      padding: 110px 15px 0 15px;
+    }
 
     .header {
       padding: 24px 18px 16px;
-      @include flexBox(flex,center,space-between);
+      @include flexBox(flex, center, space-between);
       border-bottom: 0.5px solid $brown;
+      @media screen and (max-width: $mobileMax) {
+        border: $noneMobile;
+        display: $blockMobile;
+        padding: 0;
+        margin-top: 21px;
+      }
 
       .leftItem {
-        @include flexCenter(flex,center);
+        @include flexCenter(flex, center);
+
+        @media screen and (max-width: $mobileMax) {
+          justify-content: space-between;
+        }
 
         .beyond {
           width: 157px;
           height: 28px;
           object-fit: contain;
           margin-right: 44px;
+          @media screen and (max-width: $mobileMax) {
+            margin-right: 0;
+            width: 141px;
+          }
         }
       }
 
       .rightItem {
-        @include flexBox(flex,center,flex-start);
+        @include flexBox(flex, center, flex-start);
         margin-right: 190px;
+        @media screen and (max-width: $mobileMax) {
+          display: $noneMobile;
+        }
       }
 
       .select {
@@ -248,54 +363,84 @@ select:active {
         border-radius: 4px;
         background-color: $primary;
         border-right: 8px solid transparent;
-        @include fontStyling($font_size_18,$font_weight_bold,normal);
+        @include fontStyling($font_size_18, $font_weight_bold, normal);
         color: $darkBrown;
       }
     }
 
     .slider {
-      @include flexBox(flex,center,center);
+      @include flexBox(flex, center, center);
 
       .article {
-        position: relative;
+        position: $relative;
         background: $primary;
         max-width: 900px;
         margin-top: 30px;
         margin-bottom: 150px;
         z-index: 1;
+        @media screen and (max-width: $mobileMax) {
+          max-width: unset;
+          margin-top: 20px;
+          margin-bottom: 60px;
+        }
 
         .eyeContainer {
           top: 0;
           right: -55px;
-          position: absolute;
+          position: $absolute;
           padding: 13px 12px 13.2px;
           border-bottom-right-radius: 12px;
           border-top-right-radius: 12px;
-          background-color:  $lightOrange;
+          background-color: $lightOrange;
+          @media screen and (max-width: $mobileMax) {
+            right: 15px;
+            top: 20px;
+            padding: 9px 9px 6px;
+            border-radius: 4px;
+          }
 
           .eye {
             width: 30px;
             height: 21.8px;
+            @media screen and (max-width: $mobileMax) {
+              width: 22px;
+              height: 16px;
+            }
           }
           .count {
-            position: absolute;
+            position: $absolute;
             top: -10px;
             right: -10px;
             padding: 2px 6px;
-            border: solid 2px  $lightOrange;
+            border: solid 2px $lightOrange;
             background-color: $primary;
             border-radius: 50px;
+            @media screen and (max-width: $mobileMax) {
+              padding: 1px 4px;
+              top: -7px;
+              right: -6px;
+              font-size: $font_size_12;
+            }
           }
         }
 
         .editContainer {
-          position: absolute;
+          position: $absolute;
           top: 70px;
           right: -55px;
           padding: 14px 18px 13.1px 15px;
           border-bottom-right-radius: 12px;
           border-top-right-radius: 12px;
           background-color: $lightPurple;
+          @media screen and (max-width: $mobileMax) {
+            position: $fixed;
+            bottom: 0;
+            top: unset;
+            right: 5px;
+            padding: 12px 12px 2px;
+            border-top-left-radius: 12px;
+            border-bottom-right-radius: 0;
+          }
           .edit {
             width: 21px;
             height: 20.9px;
@@ -303,7 +448,7 @@ select:active {
         }
 
         .leftArrowContainer {
-          position: absolute;
+          position: $absolute;
           left: -25px;
           top: 50%;
           margin: auto;
@@ -311,12 +456,15 @@ select:active {
           background: $primary;
           padding: 20px;
           z-index: -1;
-          @include flexBox(flex,center,center);
+          @include flexBox(flex, center, center);
+          @media screen and (max-width: $mobileMax) {
+            display: $noneMobile;
+          }
         }
 
         .rightArrowContainer {
-          @include flexBox(flex,center,center);
-          position: absolute;
+          @include flexBox(flex, center, center);
+          position: $absolute;
           right: -25px;
           top: 50%;
           margin: auto;
@@ -324,70 +472,151 @@ select:active {
           background: $primary;
           padding: 20px;
           z-index: -1;
+          @media screen and (max-width: $mobileMax) {
+            display: $noneMobile;
+          }
         }
 
         .textHeader {
-          @include fontStyling($font_size_26,$font_weight_bold,normal);
+          @include fontStyling($font_size_26, $font_weight_bold, normal);
           color: $darkBrown;
+          @media screen and (max-width: $mobileMax) {
+            @include fontStyling($font_size_18, $font_weight_bold, 1.33);
+            margin-right: 40px;
+          }
         }
 
         .text {
-          @include fontStyling($font_size_16,$font_weight_bold,normal);
+          @include fontStyling($font_size_16, $font_weight_bold, normal);
           color: $darkBrown;
+          @media screen and (max-width: $mobileMax) {
+            @include fontStyling($font_size_14, $font_weight_normal, normal);
+          }
         }
 
         .header {
           padding: 24px;
           border-bottom: 0.5px solid $brown;
+          @media screen and (max-width: $mobileMax) {
+            position: $relative;
+            padding: 15px;
+            margin-top: 0;
+          }
         }
 
         .body {
           padding: 24px;
+          @media screen and (max-width: $mobileMax) {
+            padding: 12px;
+          }
         }
 
         .articleImg {
           margin-top: 18px;
           max-width: 824px;
           margin-bottom: 38px;
+          @media screen and (max-width: $mobileMax) {
+            max-width: unset;
+            width: 100%;
+            margin-bottom: 18px;
+          }
         }
       }
     }
 
     .roundTable {
-      position: absolute;
+      position: $absolute;
       width: 113px;
       height: 113px;
       right: 0;
       top: 103px;
-      cursor: pointer;
+      cursor: $pointer;
+      @media screen and (max-width: $mobileMax) {
+        display: $noneMobile;
+      }
     }
 
     .bottomDesign {
       max-width: 635px;
       height: 105px;
-      position: fixed;
+      position: $fixed;
       bottom: 0;
       left: 70px;
       object-fit: contain;
+      @media screen and (max-width: $mobileMax) {
+        display: $noneMobile;
+      }
     }
 
     .beyondBig {
       right: 0;
       margin: auto;
       left: 30%;
-      position: fixed;
+      position: $fixed;
       max-width: 240px;
       height: 60px;
       bottom: 30px;
+      @media screen and (max-width: $mobileMax) {
+        display: $noneMobile;
+      }
+    }
+
+    .roundTable_mv {
+      display: $noneDesktop;
+      @media screen and (max-width: $mobileMax) {
+        @include flexBox($flexMobile, center, space-between);
+        position: $fixed;
+        bottom: 0;
+        top: unset;
+        right: 55px;
+        padding: 9px 12px 4px;
+        border-top-left-radius: 12px;
+        border-top-right-radius: 12px;
+        cursor: $pointer;
+        background-color: $lightOrange;
+        z-index: 1;
+
+        .icon {
+          width: 13px;
+          height: 17px;
+          margin-right: 5px;
+          margin-top: 5px;
+        }
+        .text {
+          color: $primary;
+          @include fontStyling($font_size_22, $font_weight_bold, normal);
+        }
+      }
+    }
+
+    .slide_mv {
+      display: $noneDesktop;
+      @media screen and (max-width: $mobileMax) {
+        @include flexBox($flexMobile, center, space-between);
+        z-index: 1;
+        position: $fixed;
+        bottom: 6px;
+        left: 5px;
+
+        .arrow {
+          width: 12px;
+          height: 12px;
+        }
+        .slide {
+          padding: 10px;
+          background: $primary;
+          @include fontStyling($font_size_14, $font_weight_bold, normal);
+        }
+      }
     }
   }
 }
 
 .tableContainer {
-  position: relative;
+  position: $relative;
 
   .roundTableIcon {
-    position: fixed;
+    position: $fixed;
     top: 0;
     left: -54px;
     padding: 12px 10px 6px 11px;
@@ -396,18 +625,21 @@ select:active {
     background-color: $cream;
 
     .icon {
-        width: 33px;
-        height: 38px;
+      width: 33px;
+      height: 38px;
     }
   }
   .feedContainer {
     padding: 16px;
+    @media screen and (max-width: $mobileMax) {
+      padding: 0 12px 16px;
+    }
     .searchFilter {
-      position: relative;
-      @include flexBox(flex,center,space-between);
+      position: $relative;
+      @include flexBox(flex, center, space-between);
 
       .filterTool {
-        position: absolute;
+        position: $absolute;
         width: 161px;
         border-radius: 4px;
         box-shadow: 0 2px 4px 0 $boxShadowColor;
@@ -421,7 +653,7 @@ select:active {
           border-bottom: 0.5px solid $brown;
 
           .text {
-            @include fontStyling($font_size_12,$font_weight_bold,normal);
+            @include fontStyling($font_size_12, $font_weight_bold, normal);
             color: $darkBrown;
           }
         }
@@ -430,24 +662,24 @@ select:active {
           padding: 10px 10px 8px;
 
           .buttons {
-            @include flexBox(flex,center,space-between);
+            @include flexBox(flex, center, space-between);
 
             .clear {
-              cursor: pointer;
+              cursor: $pointer;
               border-radius: 4px;
               border: solid 1px $darkGrey;
               padding: 5px 18px;
-              @include fontStyling($font_size_10,$font_weight_600,normal);
+              @include fontStyling($font_size_10, $font_weight_600, normal);
               color: $darkBrown;
             }
 
             .apply {
-              cursor: pointer;
+              cursor: $pointer;
               margin-left: 6px;
               border-radius: 4px;
               background-color: $orange;
               padding: 6px 7px;
-              @include fontStyling($font_size_10,$font_weight_600,normal);
+              @include fontStyling($font_size_10, $font_weight_600, normal);
               color: $primary;
               text-align: center;
             }
@@ -455,23 +687,23 @@ select:active {
 
           .radio {
             .radioContainer {
-              @include fontStyling($font_size_12,$font_weight_500,normal);
+              @include fontStyling($font_size_12, $font_weight_500, normal);
               color: $darkBrown;
-              display: block;
-              position: relative;
+              display: $blockDesktop;
+              position: $relative;
               padding-left: 25px;
               margin-bottom: 10px;
-              cursor: pointer;
+              cursor: $pointer;
             }
 
             .radioContainer input {
-              position: absolute;
+              position: $absolute;
               opacity: 0;
-              cursor: pointer;
+              cursor: $pointer;
             }
 
             .checkmark {
-              position: absolute;
+              position: $absolute;
               top: 0;
               left: 0;
               width: 15px;
@@ -482,12 +714,12 @@ select:active {
 
             .checkmark:after {
               content: "";
-              position: absolute;
-              display: none;
+              position: $absolute;
+              display: $noneDesktop;
             }
 
             .radioContainer input:checked ~ .checkmark:after {
-              display: block;
+              display: $blockDesktop;
             }
 
             .radioContainer .checkmark:after {
@@ -499,7 +731,7 @@ select:active {
               width: 12px;
               height: 12px;
               border-radius: 2px;
-              background-color:  $lightOrange;
+              background-color: $lightOrange;
             }
           }
         }
@@ -510,7 +742,7 @@ select:active {
         max-width: 455px;
         border-radius: 4px;
         border: solid 1px $grey;
-        @include flexBox(flex,center,flex-start);
+        @include flexBox(flex, center, flex-start);
         padding: 9px 9px 10px;
 
         .search {
@@ -519,17 +751,21 @@ select:active {
         }
 
         .input {
-          @include fontStyling($font_size_14,$font_weight_normal,normal);
+          @include fontStyling($font_size_14, $font_weight_normal, normal);
           margin-left: 12px;
           color: $grey;
         }
       }
 
       .filter {
-        cursor: pointer;
+        cursor: $pointer;
         margin-left: 9px;
         width: 25px;
         height: 23px;
+      }
+
+      @media screen and (max-width: $mobileMax) {
+        display: $noneMobile;
       }
     }
   }
@@ -540,13 +776,22 @@ select:active {
   margin-top: 20px;
   border: solid 1px $lightGrey;
   background-color: $primary;
+  @media screen and (max-width: $mobileMax) {
+    position: $relative;
+    box-shadow: 0 2px 4px 0 $boxShadowColor;
+    border: none;
+  }
   .header {
-    @include flexBox(flex,center,space-between);
+    @include flexBox(flex, center, space-between);
     border-radius: 4px;
     background-color: $darkCream;
+    @media screen and (max-width: $mobileMax) {
+      background: $primary;
+      border-radius: 0;
+    }
 
-    .left {
-      @include flexBox(flex,center,flex-start);
+    .leftElement {
+      @include flexBox(flex, center, flex-start);
 
       .profile {
         width: 32px;
@@ -557,20 +802,20 @@ select:active {
       .name {
         margin-left: 6px;
         .text {
-          @include fontStyling($font_size_14,$font_weight_bold,normal);
+          @include fontStyling($font_size_14, $font_weight_bold, normal);
           color: $darkBrown;
         }
 
         .title {
           margin-top: 2px;
-          @include fontStyling($font_size_10,$font_weight_normal,normal);
+          @include fontStyling($font_size_10, $font_weight_normal, normal);
           color: $darkGrey;
         }
       }
     }
 
-    .right {
-      @include flexBox(flex,center,flex-end);
+    .rightElement {
+      @include flexBox(flex, center, flex-end);
 
       .unitComment {
         width: 120px;
@@ -579,16 +824,33 @@ select:active {
         border: solid 1px $lightPurple;
         background-color: $lightPurple;
         padding: 5px 16px 4px 17px;
-        @include fontStyling($font_size_12,$font_weight_normal,normal);
+        @include fontStyling($font_size_12, $font_weight_normal, normal);
         color: $primary;
+        @media screen and (max-width: $mobileMax) {
+          position: $absolute;
+          right: 0;
+          bottom: 6px;
+          border: none;
+          background-color: unset;
+          color: $darkGrey;
+          @include fontStyling($font_size_12, $font_weight_bold, 1.75);
+          padding: 0;
+        
+          &:before {
+            content: "● ";
+          }
+        }
       }
 
       .arrowContainer {
-        @include flexBox(flex,center,center);
+        @include flexBox(flex, center, center);
         margin-left: 10px;
         border: solid 1px $lightSky;
         background-color: $arrowBgr;
         padding: 6px 7px 6px 8px;
+        @media screen and (max-width: $mobileMax) {
+          border-radius: 50%;
+        }
 
         .arrowRight {
           width: 5.5px;
@@ -601,28 +863,37 @@ select:active {
   .content {
     background-color: $primary;
     padding: 14px 12px 13px;
+    @media screen and (max-width: $mobileMax) {
+      padding: 9px 14px 6px;
+    }
 
     .feedDesc {
-      @include flexBox(flex,flex-start,space-between);
+      @include flexBox(flex, flex-start, space-between);
+      @media screen and (max-width: $mobileMax) {
+        @include flexBox(flex, center, space-between);
+      }
 
       .feedImg {
         width: 178px;
         max-width: 178px;
         margin-right: 12px;
+        @media screen and (max-width: $mobileMax) {
+          min-width: 123px;
+        }
       }
 
       .text {
-        @include fontStyling($font_size_12,$font_weight_normal,1.75);
+        @include fontStyling($font_size_12, $font_weight_normal, 1.75);
         color: $darkGrey;
       }
     }
 
     .footer {
-      @include flexBox(flex,center,flex-start);
+      @include flexBox(flex, center, flex-start);
 
       .comment {
         margin-top: 5px;
-        @include flexBox(flex,center,flex-start);
+        @include flexBox(flex, center, flex-start);
         .icon {
           width: 11px;
           height: 11px;
@@ -630,17 +901,17 @@ select:active {
 
         .text {
           margin-left: 5px;
-          @include fontStyling($font_size_12,$font_weight_bold,1.75);
+          @include fontStyling($font_size_12, $font_weight_bold, 1.75);
           color: $darkGrey;
         }
       }
 
       .time {
         margin-top: 5px;
-        @include flexBox(flex,center,center);
+        @include flexBox(flex, center, center);
         text-align: center;
         margin-left: 7px;
-        @include fontStyling($font_size_12,$font_weight_bold,1.75);
+        @include fontStyling($font_size_12, $font_weight_bold, 1.75);
         color: $darkGrey;
       }
     }
@@ -649,9 +920,8 @@ select:active {
 
 .flex-c-col {
   flex-direction: column;
-  @include flexBox(flex,center,center);
+  @include flexBox(flex, center, center);
 }
-
 
 .m-top-29 {
   margin-top: 29px;
@@ -662,9 +932,23 @@ select:active {
 }
 
 .cursor-p {
-  cursor: pointer;
+  cursor: $pointer;
 }
 
 .m-left-37 {
   margin-left: 37px;
+}
+
+.m-left-5 {
+  margin-left: 5px;
+}
+
+.m-right-5 {
+  margin-right: 5px;
+}
+
+.none-m {
+  @media screen and (max-width: $mobileMax) {
+    display: $noneMobile;
+  }
 }

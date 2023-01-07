@@ -10,6 +10,8 @@ $font_size_15: 15px;
 $font_size_16: 16px;
 $font_size_18: 18px;
 $font_size_19: 19px;
+$font_size_20: 20px;
+$font_size_22: 22px;
 $font_size_26: 26px;
 
 
@@ -39,3 +41,23 @@ $stretch_expanded:expanded;
 
 $italic_font_style:italic;
 $normal_font_style:normal;
+
+
+// positions
+
+$fixed:fixed;
+$absolute:absolute;
+$relative:relative;
+$static:static;
+$sticky:sticky;
+
+
+// cursor
+
+$pointer:pointer;
+$alias:alias;
+$all-scroll:all-scroll;
+$auto:auto;
+$default:default;
+$grab:grab;
+$notAllowed:not-allowed;

@@ -1,12 +1,13 @@
 import "./main.scss";
-import NewLogo from "./assets/images/newLogo.png"
+import NewLogo from "./assets/images/newLogo.png";
 import Search from "./assets/images/search.svg";
 import CrossBtn from "./assets/images/cross.svg";
 import Profile from "./assets/images/profile.svg";
 import Bell from "./assets/images/bell.svg";
 import Video from "./assets/images/video.svg";
 import Chat from "./assets/images/chat.svg";
-const Header = () => {
+import Navbar from "./assets/images/navbar.svg";
+const Header = ({setOpenNav}) => {
   return (
     <div className="headerContainer">
       <div className="topBar">
@@ -32,10 +33,31 @@ const Header = () => {
             <div className="profileName">Willy Jackson</div>
             <div className="arrowDown">{">"}</div>
           </div>
+          <div className="bellContainer_mv">
+            <img src={Bell} className="bell" alt="logo" />
+            <div className="count"></div>
+          </div>
+          <div className="navbarContainer">
+            <img
+              src={Navbar}
+              onClick={() => {
+                setOpenNav((prevState) => {
+                  return !prevState;
+                });
+              }}
+              className="navbar"
+              alt="logo"
+            />
+          </div>
         </div>
       </div>
 
       <div className="downBar">
+        <select className="select_mv">
+          <option value="" selected>
+            2020 Strauss Scholars
+          </option>
+        </select>
         <div className="text2020">2020 Strauss Scholars</div>
 
         <div className="icons">
