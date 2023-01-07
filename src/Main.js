@@ -32,7 +32,7 @@ const Main = () => {
     <div ref={divRef} className="container">
       <Header setOpenNav={setOpenNav} />
       <Landing setOpen={setOpen} />
-      <SidePanel open={open} navigateFrom={window.device === "mobile" ? "bottom" : "right"} size={window.device === "mobile" ? "100%" : "520px"} onClose={handleClose} headerIcon={RoundFull} title="Roundtable">
+      <SidePanel open={open} navigateFrom={window.screen.width <= 767 ? "bottom" : "right"} size={window.screen.width <= 767 ? "100%" : "520px"} onClose={handleClose} headerIcon={RoundFull} title="Roundtable">
         <RoundTable/>
       </SidePanel>
       <SidePanel
