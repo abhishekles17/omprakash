@@ -262,6 +262,7 @@ select:active {
       display: $noneDesktop;
       @media screen and (max-width: $mobileMax) {
         display: $blockMobile;
+        min-height: 32px;
         width: 100%;
         padding: 9px 13px 8px 10px;
         border-radius: 4px;
