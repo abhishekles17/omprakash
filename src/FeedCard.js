@@ -4,7 +4,7 @@ const FeedCard = ({ details }) => {
   return (
     <div className="cardContainer">
       <div className="header">
-        <div className="left">
+        <div className="leftElement">
           <img src={details.profile} className="profile" alt="logo" />
           <div className="name">
             <div className="text">{details.name}</div>
@@ -12,7 +12,7 @@ const FeedCard = ({ details }) => {
           </div>
         </div>
 
-        <div className="right">
+        <div className="rightElement">
           <div className="unitComment">Unit 1 Comment</div>
           <div className="arrowContainer">
             <img src={RightArrowSmall} className="arrowRight" alt="logo" />
@@ -25,7 +25,7 @@ const FeedCard = ({ details }) => {
           {details.feedImage && (
             <img src={details.feedImage} className="feedImg" alt="logo" />
           )}
-          <div className="text">{details.details}</div>
+          <div className="text">{details.details} <b>Read More.</b></div>
         </div>
 
         <div className="footer">
@@ -35,7 +35,7 @@ const FeedCard = ({ details }) => {
             </div>
 
             <div className="time">
-             {details.timeline} Days ago
+            ●  {details.timeline} Days ago
             </div>
         </div>
       </div>

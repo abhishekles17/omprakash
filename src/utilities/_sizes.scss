@@ -1,0 +1,19 @@
+
+// Here we can defined different sizes which are required
+
+$mobileMax:767px;
+$mobileMin:320px;
+$largeMin:768px;
+
+
+
+// display mobile
+$blockMobile:block;
+$noneMobile:none;
+$flexMobile:flex;
+
+
+//display desktop
+$blockDesktop:block;
+$noneDesktop:none;
+$flexDesktop:flex;

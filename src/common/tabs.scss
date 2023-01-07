@@ -1,16 +1,21 @@
 @use "../utilities/_colors" as *;
 @use "../utilities/_fonts" as *;
 @use "../utilities/_mixins" as *;
+@use "../utilities/_sizes" as *;
 
 .tabContainer {
     @include flexBox(flex,center,flex-start);
     padding: 15px 16px 11px;
     border-bottom: 0.5px solid $brown;
+    @media screen and (max-width: $mobileMax) {
+        padding-left: 19px;
+        border-bottom: 0.5px solid $border;
+    }
 
     .tab {
         @include flexBox(flex,center,center);
         flex-direction: column;
-        cursor: pointer;
+        cursor: $pointer;
     }
 
     .text {

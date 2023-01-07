@@ -1,17 +1,19 @@
 import "./sidepanel.scss";
 import Close from "../assets/images/close.svg"
 const SidePanel = (props) => {
-  const { open, title = "Roundtable", onClose } = props;
+  const { open, title = "", onClose, headerIcon, navigateFrom = "left", size="100%" } = props;
   return (
     <div className={open ? "sidePanel-parent-container" : ""}>
       <div
         className={
-          open ? "container-wrap open-container-wrap" : "container-wrap"
+          open ? `${navigateFrom} open-${navigateFrom}` : `${navigateFrom}`
         }
+        style={{width:size}}
       >
         <div className="sidePanel-container">
           <div className="header">
-            <div className="text">{title}</div>
+            {headerIcon && <img src={headerIcon} className="icon" alt="logo"/>}
+            {title && <div className="text m-left-30-mv">{title}</div>}
             <img onClick={onClose} src={Close} className="close" alt="logo" />
           </div>
           {props.children}

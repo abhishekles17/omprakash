@@ -13,7 +13,7 @@ export const feedData = [
         profile:"https://www.gravatar.com/avatar/2c7d99fe281ecd3bcd65ab915bac6dd5?s=250",
         feedImage:Feed,
         unitComment:1,
-        details:"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut en. Read More..",
+        details:"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut en.",
         comments:10,
         timeline:2
     },
@@ -23,7 +23,7 @@ export const feedData = [
         profile:"https://www.gravatar.com/avatar/2c7d99fe281ecd3bcd65ab915bac6dd5?s=250",
         feedImage:Feed,
         unitComment:1,
-        details:"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut en. Read More..",
+        details:"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut en.",
         comments:20,
         timeline:2
     },
@@ -32,7 +32,7 @@ export const feedData = [
         title:"Makers Valley Partnership",
         profile:"https://www.gravatar.com/avatar/2c7d99fe281ecd3bcd65ab915bac6dd5?s=250",
         unitComment:1,
-        details:"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut en. Read More..",
+        details:"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut en.",
         comments:8,
         timeline:2
     }

@@ -9,12 +9,15 @@ import Edit from "./assets/images/edit.svg";
 import RoundTable from "./assets/images/roundTable.png";
 import BottomDesign from "./assets/images/bottomDesign.png";
 import LeftNav from "./LeftNav";
+import RoundFull from "./assets/images/roundFull.png";
 
 const Landing = ({ setOpen }) => {
   return (
     <div className="landingContainer">
       <div className="bodyContainer">
+        <div className="navLeft">
         <LeftNav />
+        </div>
         <div className="header">
           <div className="leftItem">
             <img src={Beyond} className="beyond" alt="logo" />
@@ -102,7 +105,7 @@ const Landing = ({ setOpen }) => {
           src={RoundTable}
           onClick={() => {
             setOpen((prevState) => {
-              return !prevState
+              return !prevState;
             });
           }}
           className="roundTable"
@@ -110,6 +113,22 @@ const Landing = ({ setOpen }) => {
         />
         <img src={BottomDesign} className="bottomDesign" alt="logo" />
         <img src={BeyondBig} className="beyondBig" alt="logo" />
+        <div className="slide_mv">
+          <img src={LeftArrow} className="arrow m-right-5" alt="logo" />
+          <div className="slide">Slide 1 of 4</div>
+          <img src={RightArrow} className="arrow m-left-5" alt="logo" />
+        </div>
+        <div
+          className="roundTable_mv"
+          onClick={() => {
+            setOpen((prevState) => {
+              return !prevState;
+            });
+          }}
+        >
+          <img src={RoundFull} className="icon" alt="logo" />
+          <div className="text">Roundtable</div>
+        </div>
       </div>
     </div>
   );
